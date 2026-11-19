@@ -1,0 +1,28 @@
+┌──(kali㉿kali)-[~/labops/release]
+└─$ printf 'echo Your data has just been stolen. Be more carefull!\n' > install.sh
+                                                                                                                                                         
+┌──(kali㉿kali)-[~/labops/release]
+└─$ sha256sum -c install.sh.sha256
+install.sh: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+                                                                                                                                                         
+┌──(kali㉿kali)-[~/labops/release]
+└─$ gpg --homedir "$HOME/labops/gnupg-release" --verify install.sh.sha256.asc install.sh.sha256
+gpg: Signature made Wed 18 Nov 2026 03:59:32 PM EST
+gpg:                using RSA key AAFBC72DF3CD6FE77314D4513C111050DAC7BE42
+gpg:                issuer "labops-release@labops.example"
+gpg: Good signature from "LabOps Release <labops-release@labops.example>" [ultimate]
+
+┌──(kali㉿kali)-[~/labops/release]
+└─$ sha256sum install.sh > install.sh.sha256
+
+┌──(kali㉿kali)-[~/labops/release]
+└─$ sha256sum -c install.sh.sha256                                                             
+install.sh: OK
+                                                                                                                                                         
+┌──(kali㉿kali)-[~/labops/release]
+└─$ gpg --homedir "$HOME/labops/gnupg-release" --verify install.sh.sha256.asc install.sh.sha256
+gpg: Signature made Wed 18 Nov 2026 03:59:32 PM EST
+gpg:                using RSA key AAFBC72DF3CD6FE77314D4513C111050DAC7BE42
+gpg:                issuer "labops-release@labops.example"
+gpg: BAD signature from "LabOps Release <labops-release@labops.example>" [ultimate]

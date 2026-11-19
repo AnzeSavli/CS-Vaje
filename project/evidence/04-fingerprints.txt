@@ -1,0 +1,11 @@
+đ=== release key ===
+pub   rsa4096 2026-11-18 [SCE] [expires: 2027-11-18]
+      AAFB C72D F3CD 6FE7 7314  D451 3C11 1050 DAC7 BE42
+uid           [ultimate] LabOps Release <labops-release@labops.example>
+
+=== attacker key ===
+pub   rsa4096 2026-11-18 [SCE] [expires: 2027-11-18]
+      752A B7BF 70B8 7FB7 3758  06DD 11BA D4D4 C64F 1990
+uid           [ultimate] LabOps Release <labops-release@labops.example>
+
+LabOps should have checked the full GPG fingerprints in person or over a phone call before trusting the key, rather than relying on the email address alone.
